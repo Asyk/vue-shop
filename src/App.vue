@@ -1,32 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <header>
+      <Navbar />
+      <HeaderSlider />
+    </header>
+    <main>
+      <b-container>
+        <TopFilter />
+        <b-card class="mt-4">
+          <b-card-body>
+            <router-view/>
+          </b-card-body>
+        </b-card>
+      </b-container>
+    </main>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Navbar from '@/components/partials/Navbar.vue'
+import HeaderSlider from '@/components/partials/HeaderSlider.vue'
+import TopFilter from '@/components/partials/TopFilter.vue'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    Navbar,
+    HeaderSlider,
+    TopFilter
   }
 }
-</style>
+</script>
