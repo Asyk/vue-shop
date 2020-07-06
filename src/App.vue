@@ -2,16 +2,14 @@
   <div id="app">
     <header>
       <Navbar />
-      <HeaderSlider />
+      <!-- <HeaderSlider /> -->
     </header>
     <main>
       <b-container>
-        <TopFilter />
-        <b-card class="mt-4">
-          <b-card-body>
-            <router-view/>
-          </b-card-body>
-        </b-card>
+        <!-- <TopFilter /> -->
+        <div class="mt-5">
+          <router-view/>
+        </div>
       </b-container>
     </main>
   </div>

@@ -1,11 +1,22 @@
 <template>
   <div>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit illo ratione molestiae sint excepturi voluptatum officia, eveniet ex maiores quisquam enim iusto, vel fugiat deleniti optio nostrum veniam? Laboriosam, aspernatur!
+    <Products :products="allProducts" />
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+import Products from '@/components/Products.vue'
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    Products
+  },
+  computed: mapGetters(["allProducts"]),
+  methods: mapActions(["fetchProducts"]),
+  mounted() {
+    this.fetchProducts()
+  }
 }
 </script>
