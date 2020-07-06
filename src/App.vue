@@ -4,7 +4,7 @@
       <Navbar />
       <!-- <HeaderSlider /> -->
     </header>
-    <main>
+    <main class="mb-5">
       <b-container>
         <!-- <TopFilter /> -->
         <div class="mt-5">
