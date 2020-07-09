@@ -4,15 +4,20 @@
       <b-spinner variant="primary" label="Text Centered"></b-spinner>
     </div>
     <div v-else >
-      <p>Страница: {{currentPage}}</p>
-      <Products :products="allProducts" />
-      <div class="d-flex justify-content-center">
-          <b-pagination
-            v-model="currentPage"
-            v-on:input="onPageChange"
-            :total-rows="pagination.total"
-            :per-page="pagination.perPage">
-          </b-pagination>
+      <div v-if="allProducts.length>0">
+        <p>Страница: {{currentPage}} из {{Math.ceil(pagination.total/pagination.perPage)}}</p>
+        <Products :products="allProducts" />
+        <div class="d-flex justify-content-center">
+            <b-pagination
+              v-model="currentPage"
+              v-on:input="onPageChange"
+              :total-rows="pagination.total"
+              :per-page="pagination.perPage">
+            </b-pagination>
+        </div>
+      </div>
+      <div v-else>
+        <p>Список продуктов пустой</p>
       </div>
     </div>
   </div>
